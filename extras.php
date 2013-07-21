@@ -100,7 +100,13 @@ if(!isset($_SESSION["authenticated"])) {
   <tr><td>
 <strong>Q)Can I see your code?</strong>
 </td></tr>
-<tr><td>Yes, in fact, I insist you do. The code is available on <a href="">Github</a>. I could not find time to document the code properly so if you have any doubts or questions regarding the code do <a href="mailto:prashantvbaid@gmail.com">email me</a>. I will be happy to help you :)</td></tr>
+<tr><td>Yes, in fact, I insist you do. The code is available on <a href="https://github.com/prashantbaid/datam">Github</a>. I could not find time to document the code properly so if you have any doubts or questions regarding the code do <a href="mailto:prashantvbaid@gmail.com">email me</a>. I will be happy to help you :)</td></tr>
+</table>
+<table class="table table-striped">
+  <tr><td>
+<strong>Q)What more can be done in this project?</strong>
+</td></tr>
+<tr><td>Interesting analysis of data can be done when attendance status is uploaded next semester. Attendance alerts can be created. Also when sessional marks are uploaded, average marks can be calculated for each subject and so much more can be done with that data. Watch this space for more.</td></tr>
 </table>
 <table class="table table-striped">
   <tr><td>
