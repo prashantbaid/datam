@@ -1,4 +1,5 @@
 <?php
+ob_start();
  session_start(); 
 header('Content-Type: text/javascript');
  $regno=$_SESSION["regno"];
@@ -7,7 +8,6 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-
 $result = mysqli_query($con,"SELECT section, name,cgpa FROM userdata where regno=$regno");
 $row = mysqli_fetch_array($result);
 $sec=$row['section'];
@@ -25,7 +25,9 @@ while($row = mysqli_fetch_array($result)){
 	if($regno==$row['regno'])
 		break;
 }
-$data['rank']=$i;
+$data['rank']=++$i;
+if($data['rank']==141)
+	$data['rank']=1;
 
 $i=0;
 $result = mysqli_query($con,"SELECT regno, name FROM userdata where section='$sec' order by cgpa desc");
@@ -150,6 +152,11 @@ $row = mysqli_fetch_array($result);
 		}
 	}
 //}
+	if($data['rank']==1) {
+		$data['highc']="Nobody";
+		$data['highcgpa']="";
+	}
+
 	$data['grades']=$grades;
 	$data['one']=$one;
 	$data['two']=$two;
